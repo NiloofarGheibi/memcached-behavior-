@@ -16,7 +16,7 @@ optspace = {
 }
 
 SSHHost    = "localhost"
-SSHPort    = 22
+SSHPort    = 10022
 REMOTEROOT = "~"
 
 class Statistics (dude.summaries.FilesLineSelect):
@@ -40,7 +40,7 @@ def cmdl_exp(optpt):
     return "./run-experiment.sh"
     
 def prepare_global():
-    print ""
+    print "Prepare Global"
 
 def prepare_exp(optpt):
     setDefault(optpt, "noRequests",  optpt["rate"])
@@ -49,4 +49,4 @@ def prepare_exp(optpt):
     Benchmark.prepare_exp(SSHHost, SSHPort, REMOTEROOT, optpt)
 
 def finish_exp(optpt, status):
-    print ""
+    print "Experiment Finished"
