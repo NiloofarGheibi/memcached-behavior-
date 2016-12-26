@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+      
+MAINTAINER Niloofar Gheibi <niloofar.gheibi@mailbox.tu-dresden.de>
+
+RUN apt-get update
+RUN apt-get upgrade -y
+
+RUN apt-get update && apt-get install -y memcached
+RUN apt-get update && apt-get install -y openssh-server
+RUN mkdir /var/run/ssh
+RUN sed -i 's/Port 22/Port 10022/' /etc/ssh/sshd_config
+
+EXPOSE 10022
