@@ -3,4 +3,4 @@ echo "Running run.sh"
 export PYTHONPATH=$PYTHONPATH:/
 dude run
 python sum.py
-Rscripts for R
+Rscript graphs.R
