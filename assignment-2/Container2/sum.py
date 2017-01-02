@@ -1,8 +1,14 @@
-result_string = "" 
+import os
+
+result_string = ""
 
 for output_rate in [1000, 2000, 5000, 10000, 20000, 30000, 50000, 100000, 150000] :
-	filename = "/home/niloofar/Desktop/SE1_HW2/assignment-2/raw-throughput-latency/exp__rate" + str(output_rate) + "/stats.csv"
-	with open(filename) as fp:
+    file_str = "raw-throughput-latency/exp__rate" + str(output_rate) + "/stats.csv"
+    filename = os.path.abspath(file_str)
+    
+    # filename = "/home/niloofar/Desktop/SE1_HW2/assignment-2/raw-throughput-latency/exp__rate" + str(output_rate) + "/stats.csv"
+    
+    with open(filename) as fp:
 		for i, line in enumerate(fp):
 			print (str(i))
 			if i == 1:
