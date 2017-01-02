@@ -10,32 +10,18 @@ RUN apt-get upgrade -y
 RUN apt-get update && apt-get install -y openssh-server mercurial build-essential r-base
 RUN mkdir /var/run/sshd
 
-#RUN apt-get update && apt-get install -y openssh-server
-#RUN mkdir /var/run/sshd
-#RUN echo 'root:screencast' | chpasswd
-#RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# SSH login fix. Otherwise user is kicked off after login
-RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-
-#ENV NOTVISIBLE "in users profile"
-RUN echo "export VISIBLE=now" >> /etc/profile
 
 COPY sshd_config /etc/ssh/sshd_config
 COPY id_rsa.pub /root/.ssh/authorized_keys
 COPY id_rsa /root/.ssh/
 
-#mcperf
 
-RUN apt-get install git -y
-RUN apt-get install autoconf -y
-RUN apt-get install build-essential -y
-RUN git clone git://github.com/twitter/twemperf.git\
-&& cd twemperf\
-&& autoreconf -fvi\
-&& CFLAGS="-ggdb3 -O0" ./configure --enable-debug\
-&& make\
-&& src/mcperf -h
+# Install mcperf
+ADD https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/twemperf/mcperf-0.1.1.tar.gz /
+RUN tar xf mcperf-0.1.1.tar.gz
+WORKDIR /mcperf-0.1.1
+RUN ./configure && make && make install
 
 #dude
 RUN hg clone https://bitbucket.org/db7/dude
@@ -49,6 +35,7 @@ COPY Benchmark.py /
 COPY graphs.R /
 
 COPY run.sh /
+COPY sum.py /
 RUN chmod 777 /run.sh
 
 EXPOSE 10023
