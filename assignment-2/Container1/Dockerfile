@@ -2,31 +2,13 @@ FROM ubuntu:16.04
       
 MAINTAINER Niloofar Gheibi <niloofar.gheibi@mailbox.tu-dresden.de>
 
-RUN apt-get update
-RUN apt-get upgrade -y
-
-#SSH SERVER 
+RUN groupadd -r memcache && useradd -r -g memcache memcache
 
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
-#RUN apt-get update && apt-get install -y openssh-server
-#RUN mkdir /var/run/sshd
-#RUN echo 'root:screencast' | chpasswd
-#RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-
-# SSH login fix. Otherwise user is kicked off after login
-#RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-
-#ENV NOTVISIBLE "in users profile"
-#RUN echo "export VISIBLE=now" >> /etc/profile
-
 COPY sshd_config /etc/ssh/sshd_config
-COPY id_rsa.pub /root/.ssh/authorized_keys 
-
-#memcached 
-
-RUN groupadd -r memcache && useradd -r -g memcache memcache
+COPY id_rsa.pub /root/.ssh/authorized_keys
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		libevent-2.0-5 \
@@ -58,10 +40,8 @@ RUN buildDeps=' \
 	&& cd / && rm -rf /usr/src/memcached \
 	&& apt-get purge -y --auto-remove $buildDeps
 
-
 RUN mkdir mm
 RUN chmod 777 /mm
 
 EXPOSE 10022 11211
-
 CMD ["/usr/sbin/sshd", "-D"]
