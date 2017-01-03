@@ -2,6 +2,9 @@
 
 Instructions to see the result of project testing behavior of memcached while receiving requests via [mcperf](https://github.com/twitter/twemperf)
 
+## Important Note ##
+for Testing the Project you should make public/private key for authentication reasons and copy them into Container1 and Container2 Folders, Now it's my public/private keys.
+
 ### What is this repository for? ###
 
 * Course Project of System Engineering 1. 
