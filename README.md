@@ -38,18 +38,7 @@ docker run -p 10023:10023 --link server:server --name client client-image
 ```
 #!script
 
-ssh 127.0.0.1 -p 10023
-```
-```
-#!script
-
-cd ..
-```
-
-```
-#!script
-
-sh run.sh
+ssh 127.0.0.1 -p 10023 "cd ..; sh run.sh"
 ```
 
 In the terminal of the Host:
