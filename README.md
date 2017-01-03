@@ -9,8 +9,8 @@ for Testing the Project you should make public/private key for authentication re
 
 * Course Project of System Engineering 1. 
 The purpose of the project working with scripts, running experiments and get familiar with docker containers.
-Drawing graphs via R graphics
-* version 1
+Drawing graphs via R graphics 
+
 
 ### How do I get set up? ###
 
