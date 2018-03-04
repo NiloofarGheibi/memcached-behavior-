@@ -70,19 +70,19 @@ In mcperf
 
 * --num-calls=6 --num-conns=100
 
-![Screen Shot 2017-01-02 at 19.09.05.png](https://bitbucket.org/repo/Gxrn8e/images/222449006-Screen%20Shot%202017-01-02%20at%2019.09.05.png)
+![-num-calls=6 --num-conns=100](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D6%20--num-conns%3D100.png)
 
-![Screen Shot 2017-01-02 at 19.09.12.png](https://bitbucket.org/repo/Gxrn8e/images/2245210082-Screen%20Shot%202017-01-02%20at%2019.09.12.png)
+![-num-calls=6 --num-conns=100-latency](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D6%20--num-conns%3D100-latency.png)
 
 * --num-calls=8 --num-conns=50
-![Screen Shot 2017-01-02 at 19.10.26.png](https://bitbucket.org/repo/Gxrn8e/images/1011105538-Screen%20Shot%202017-01-02%20at%2019.10.26.png)
+![--num-calls=8 --num-conns=50](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D8%20--num-conns%3D50.png)
 
-![Screen Shot 2017-01-02 at 19.10.35.png](https://bitbucket.org/repo/Gxrn8e/images/2993356580-Screen%20Shot%202017-01-02%20at%2019.10.35.png)
+![--num-calls=8 --num-conns=50-latency](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D8%20--num-conns%3D50-latency.png)
 
 * --num-calls=8 --num-conns=100
-![Screen Shot 2017-01-02 at 19.12.53.png](https://bitbucket.org/repo/Gxrn8e/images/3849876291-Screen%20Shot%202017-01-02%20at%2019.12.53.png)
+![--num-calls=8 --num-conns=100](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D8%20--num-conns%3D100%20.png)
 
-![Screen Shot 2017-01-02 at 19.13.01.png](https://bitbucket.org/repo/Gxrn8e/images/477062597-Screen%20Shot%202017-01-02%20at%2019.13.01.png)
+![--num-calls=8 --num-conns=100](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D8%20--num-conns%3D100-latency.png)
 
 ### Who do I talk to? ###
 
