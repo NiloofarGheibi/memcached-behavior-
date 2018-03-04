@@ -63,9 +63,10 @@ docker cp <client-ID>:/graph2.pdf Path/in/Host/graphs/
 In mcperf 
 
 * --num-calls=6 --num-conns=50
-![Screen Shot 2017-01-02 at 19.07.18.png](https://bitbucket.org/repo/Gxrn8e/images/2184891254-Screen%20Shot%202017-01-02%20at%2019.07.18.png)
+![--num-calls=6 --num-conns=50](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D6%20--num-conns%3D50.png)
 
-![Screen Shot 2017-01-02 at 19.07.31.png](https://bitbucket.org/repo/Gxrn8e/images/515344820-Screen%20Shot%202017-01-02%20at%2019.07.31.png)
+
+![--num-calls=6 --num-conns=50-latency](https://github.com/NiloofarGheibi/memcached-behavior-/blob/master/screenshots/--num-calls%3D6%20--num-conns%3D50-latency.png)
 
 * --num-calls=6 --num-conns=100
 
